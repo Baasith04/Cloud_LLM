@@ -9,7 +9,7 @@ SCHEMA_SQL = """
 CREATE EXTENSION IF NOT EXISTS vector;
 
 CREATE TABLE IF NOT EXISTS documents (
-    document_id TEXT PRIMARY KEY,
+    document_id UUID PRIMARY KEY,,
     filename TEXT NOT NULL,
     file_hash TEXT UNIQUE NOT NULL,
     file_size_bytes BIGINT NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS documents (
 
 CREATE TABLE IF NOT EXISTS chunks (
     chunk_id TEXT PRIMARY KEY,
-    document_id TEXT NOT NULL REFERENCES documents(document_id) ON DELETE CASCADE,
+    document_id UUID NOT NULL REFERENCES documents(document_id) ON DELETE CASCADE,
     filename TEXT NOT NULL,
     chunk_index INTEGER NOT NULL,
     page_number INTEGER NOT NULL,
