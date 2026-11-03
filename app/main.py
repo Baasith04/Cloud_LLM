@@ -12,6 +12,8 @@ from app.db.pgvector import pgvector_store
 import logging
 from pathlib import Path
 
+UPLOADS_DIR = Path(__file__).resolve().parents[1] / "uploads"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -19,7 +21,6 @@ logging.basicConfig(
 
 logger = logging.getLogger("uvicorn.error")
 
-UPLOADS_DIR = Path(__file__).resolve().parents[1] / "uploads"
 
 
 @asynccontextmanager

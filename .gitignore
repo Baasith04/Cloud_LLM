@@ -1,10 +1,10 @@
 # ==========================================
 # Environments & Secrets (CRITICAL)
 # ==========================================
-.env/
-.env.*/
-*.env/
-!.env.example/
+
+.env
+.env.*
+!.env.example
 
 # ==========================================
 # Python Virtual Environments
